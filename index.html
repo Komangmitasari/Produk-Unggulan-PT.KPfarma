@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penjualan Produk - Toko Kami</title>
+    <style>
+      /* Gaya dasar halaman */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #218dc3;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .product-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.2s ease-in-out;
+        padding-bottom: 15px;
+      }
+
+      .product-card:hover {
+        transform: scale(1.05);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%; /* Menjaga rasio 1:1 */
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-details {
+        padding: 15px;
+      }
+
+      .product-name {
+        font-size: 1.2em;
+        margin: 0;
+        color: #333;
+      }
+
+      .product-description {
+        font-size: 0.9em;
+        color: #666;
+        margin: 10px 0;
+      }
+
+      .product-price {
+        font-size: 1.1em;
+        color: #28a745;
+        margin: 5px 0;
+        font-weight: bold;
+      }
+
+      .buy-button {
+        display: inline-block;
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 0.9em;
+        transition: background-color 0.2s;
+      }
+
+      .buy-button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Produk Penjualan Kami</h1>
+      <p>Temukan 50 produk pilihan terbaik di toko kami</p>
+    </header>
+
+    <div class="container">
+      <div class="product-grid">
+        <!-- Contoh satu produk, duplikat elemen berikut untuk total 50 produk -->
+        <!-- PRODUK 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk1.png" alt="Produk Unggulan 1" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Paracetamol</h2>
+            <p class="product-description">
+              Mengatasi demam dan meringankan nyeri
+            </p>
+            <p class="product-price">Rp12.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+
+        <!-- PRODUK 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk2.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Aspirin</h2>
+            <p class="product-description">
+              Mengobati nyeri ringan hingga sedang, peradangan atau atritis
+            </p>
+            <p class="product-price">Rp24.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+
+        <!-- PRODUK 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk3.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Ibuprofen</h2>
+            <p class="product-description">
+              Pereda nyeri, haid, sakit gigi, dan gejala pilek atau flu
+            </p>
+            <p class="product-price">Rp10.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+
+        <!-- PRODUK 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk4.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Amoxicillin</h2>
+            <p class="product-description">
+              Digunakan untuk mengobati infeksi yang disebabkan oleh bakteri
+            </p>
+            <p class="product-price">Rp 10.104</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+
+        <!-- PRODUK 5 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk5.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Azitromisin</h2>
+            <p class="product-description">
+              Obat antibiotik yang mengobati infeksi bakteri
+            </p>
+            <p class="product-price">Rp12.300</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk6.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Metformin</h2>
+            <p class="product-description">
+              Menurunkan kadar gula darah yang meningkat pada penderita diabetes
+            </p>
+            <p class="product-price">Rp2.798</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 7 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk7.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Glibenklamid</h2>
+            <p class="product-description">
+              Obat anti diabetes tipe 2 yang termasuk golongan sulfonilurea
+            </p>
+            <p class="product-price">Rp3.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 8 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk8.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Losartan</h2>
+            <p class="product-description">
+              Mengatasi tekanan darah tinggi (hipertensi) dan membantu kerusakan
+              ginjal akibat diabetes
+            </p>
+            <p class="product-price">Rp45.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 9 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk9.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Atorvastatin</h2>
+            <p class="product-description">
+              Menurunkan kolestrol jahat, serta meningkatkan kolestrol baik
+              didalam darah
+            </p>
+            <p class="product-price">Rp52.897</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 10 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk10.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Simvastatin</h2>
+            <p class="product-description">Penurun kolestrol golongan statin</p>
+            <p class="product-price">Rp6.500</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 11 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk11.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Omeprazole</h2>
+            <p class="product-description">
+              Digunakan untuk keluhan asam lambung berlebihan
+            </p>
+            <p class="product-price">Rp6.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 12 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk12.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Pantoprazole</h2>
+            <p class="product-description">Meredakan tukak lambung</p>
+            <p class="product-price">Rp11.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 13 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk13.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Alprazolam</h2>
+            <p class="product-description">
+              Mengatasi gangguan kecemasan dan panik
+            </p>
+            <p class="product-price">Rp16.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 14 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk14.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Diazepan</h2>
+            <p class="product-description">
+              Mengobati gangguan kecemasan, meredakan gejala yang terjadi akibat
+              penarikan alkohol seperti tremor
+            </p>
+            <p class="product-price">Rp4.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 15 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk15.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Amlodipin</h2>
+            <p class="product-description">Berfungsi untuk terapi hipertensi</p>
+            <p class="product-price">Rp51.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 16 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk16.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Famotidine</h2>
+            <p class="product-description">Mengobati tukak lambung</p>
+            <p class="product-price">Rp5.200</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 17 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk17.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Levothvroxine</h2>
+            <p class="product-description">
+              Mengobati infeksi yang disebabkan oleh bakteri
+            </p>
+            <p class="product-price">Rp18.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 18 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk18.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Warfarin 2Mg</h2>
+            <p class="product-description">
+              Mencegah dan pengobatan trombosit vena
+            </p>
+            <p class="product-price">Rp21.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 19 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk19.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Warfarin 5Mg</h2>
+            <p class="product-description">
+              Mencegah pembekuan darah dan pengumpalan darah
+            </p>
+            <p class="product-price">Rp157.623</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 20 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk20.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Levofloxacin 500Mg</h2>
+            <p class="product-description">
+              Mengobati infeksi dan sinusitif akut
+            </p>
+            <p class="product-price">Rp18.600</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 21 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk21.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Levofloxacin 750Mg</h2>
+            <p class="product-description">
+              Terapi pnemumonia (kangker paru-paru)
+            </p>
+            <p class="product-price">Rp37.816</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 22 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk22.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Amoxicillin</h2>
+            <p class="product-description">
+              Obat antibiotik untuk lawan infeksi
+            </p>
+            <p class="product-price">Rp7.700</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 23 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk23.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Metronidazole</h2>
+            <p class="product-description">
+              Mengobati infeksi trichomonas vaginalis, bakterial vaginosis
+              (Infeksi Gardnerella vaginalis) dan infeksi Entamoeba histolytica
+            </p>
+            <p class="product-price">Rp4.900</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 24 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk24.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Flucunazole</h2>
+            <p class="product-description">
+              Obat untuk mengatasi akibat jamur (Vagina dan Tenggorokan)
+            </p>
+            <p class="product-price">Rp24.516</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 25 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk25.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Itraconazole</h2>
+            <p class="product-description">Obat anti jamur</p>
+            <p class="product-price">Rp55.500</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 26 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk26.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Montelukast</h2>
+            <p class="product-description">
+              Mengontrol gejala asma seperti sesak nafas
+            </p>
+            <p class="product-price">Rp13.688</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 27 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk27.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Cetirizine</h2>
+            <p class="product-description">
+              Meredakan gejala akibat reaksi alergi seperti bersin, hidung meler
+              atau gatal dikulit
+            </p>
+            <p class="product-price">Rp6.500</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 28 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk28.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Fexofenadine</h2>
+            <p class="product-description">
+              Mencegah dan mengatasi gejala alergi, seperti rinitis, alergi, dan
+              urtikaria
+            </p>
+            <p class="product-price">Rp13.257</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 29 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk29.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Venlafaxine</h2>
+            <p class="product-description">
+              Mengobati depresi, gangguan kecemasan atau gangguan panik
+            </p>
+            <p class="product-price">Rp387.646</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 30 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk30.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Sertraline</h2>
+            <p class="product-description">
+              Untuk gejala depresi tanpa riwayat mania
+            </p>
+            <p class="product-price">Rp50.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 31 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk31.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Paroxetine</h2>
+            <p class="product-description">
+              Mengobati anti depresan atau gangguan kecemasan
+            </p>
+            <p class="product-price">Rp650.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 32 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk32.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Fluexetine</h2>
+            <p class="product-description">
+              Mengatasi gangguan obsesif kompusif (OCD), gangguan diforik dan
+              mengatasi depresi
+            </p>
+            <p class="product-price">Rp62.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 33 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk33.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Olanzapine</h2>
+            <p class="product-description">
+              Mengobati gangguan emosi, saraf dan mental
+            </p>
+            <p class="product-price">Rp345.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 34 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk34.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Memantine</h2>
+            <p class="product-description">
+              Untuk mengurangi gejela demensia pada penyakit alzheimer
+            </p>
+            <p class="product-price">Rp41.200</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 35 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk35.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Rispiridone</h2>
+            <p class="product-description">
+              Obat ini digunakan dalam terapi pada skizofrenia akut dan kronik
+              serta pada kondisi psikosis yang lain
+            </p>
+            <p class="product-price">Rp190.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 36 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk36.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Quetiapine</h2>
+            <p class="product-description">
+              Mengatasi skizofrenia, gangguan bipolar, dan gangguan depresi
+              mayor
+            </p>
+            <p class="product-price">Rp122.500</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 37 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk37.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Haloperidol</h2>
+            <p class="product-description">
+              membantu meringankan gejala skizofrenia, sindrom tourette, mania,
+              serta tanda psikosis lainnya
+            </p>
+            <p class="product-price">Rp107.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 38 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk38.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Donepezile</h2>
+            <p class="product-description">
+              Demensia ringan hingga sedang pada penyakit Alzheimer
+            </p>
+            <p class="product-price">Rp100.743</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 39 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk39.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Krim Miconazole</h2>
+            <p class="product-description">
+              Mengobati infeksi Trichophyton, Epidermophyton, Mikrosporum,
+              Candida dan malessezia furfur
+            </p>
+            <p class="product-price">Rp4.499</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 40 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk40.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Krim Clotirimazole</h2>
+            <p class="product-description">Mengatasi infeksi jamur</p>
+            <p class="product-price">Rp14.600</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 41 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk41.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Krim Triamcinolone</h2>
+            <p class="product-description">
+              Mengatasi iritasi dan peradangan pada mulut
+            </p>
+            <p class="product-price">Rp25.965</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 42 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk42.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Ciprofloxacin</h2>
+            <p class="product-description">
+              Mengobati infeksi bakteri seperti pnemonia, gonore, infeksi
+              saluran kemih, infeksi prostat atau infeksi mata dan telinga
+            </p>
+            <p class="product-price">Rp5.105</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 43 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk43.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Ceftriaxone</h2>
+            <p class="product-description">
+              obat untuk mengatasi penyakit akibat infeksi bakteri, seperti
+              gonore, meningitis, otitis media, sifilis, dan penyakit Lyme
+            </p>
+            <p class="product-price">Rp94.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 44 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk44.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Salbutamol</h2>
+            <p class="product-description">
+              mengobati bronkospasme (misalnya penyakit asma karena alergi
+              tertentu, asma bronkial, bronkitis asmatis, emfisema pulmonum)
+            </p>
+            <p class="product-price">Rp13.088</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 45 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk45.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Inhaler Budesonide</h2>
+            <p class="product-description">Membantu mencegah gejala asma</p>
+            <p class="product-price">Rp391.500</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 46 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk46.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Inhaler Fluticasone</h2>
+            <p class="product-description">
+              obat untuk mengatasi gejala hidung tersumbat, bersin-bersin,
+              hidung meler, mata gatal atau berair
+            </p>
+            <p class="product-price">Rp323.670</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 47 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk47.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Sirup Ranitidine</h2>
+            <p class="product-description">
+              mengobati maag, heartburn, infeksi H. pylori, erosif esofanitis,
+              GERD, maupun tukak lambung
+            </p>
+            <p class="product-price">Rp26.086</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 48 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk48.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Sirup Loratadine</h2>
+            <p class="product-description">
+              Mengobati bersin, hidung berair, mata berair, gatal-gatal, ruam
+              kulit, gatal, dan gejala pilek atau alergi lainnya
+            </p>
+            <p class="product-price">Rp3.500</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 49 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk49.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Injeksi Heparin</h2>
+            <p class="product-description">
+              Mengatasi dan mencegah penggumpalan darah yang berisiko
+              menyebabkan penyumbatan pembuluh darah
+            </p>
+            <p class="product-price">Rp76.000</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- PRODUK 50 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="images/produk50.png" alt="Produk Unggulan 2" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">Injeksi Insulin</h2>
+            <p class="product-description">
+              Obat yang dapat memperlambat absorpsi makanan dan atau
+              meningkatkan kebutuhan insulin
+            </p>
+            <p class="product-price">Rp160.200</p>
+            <a href="#beli" class="buy-button">Beli</a>
+          </div>
+        </div>
+        <!-- Tambahkan hingga mencapai 50 produk -->
+      </div>
+    </div>
+  </body>
+</html>
